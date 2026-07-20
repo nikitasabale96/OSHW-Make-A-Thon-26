@@ -35,50 +35,56 @@ const timeline = [
 ];
 ---
 
-<section id="timeline" class="py-16 bg-white scroll-mt-18">
-  <div class="max-w-7xl mx-auto px-6">
+<section id="timeline" class="scroll-mt-20 bg-white py-12 md:py-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-    <h2 class="mb-8 text-center text-3xl font-bold uppercase text-blue-700">
+    <!-- Section Title -->
+    <h2 class="mb-8 text-center text-2xl font-bold uppercase text-blue-700 sm:text-3xl">
       Timeline
     </h2>
 
-    <div class="mx-auto max-w-6xl rounded-3xl border border-gray-100 bg-white px-8 py-10 shadow-sm">
+    <!-- Timeline Card -->
+    <div class="mx-auto max-w-6xl rounded-3xl border border-gray-100 bg-white px-6 py-8 shadow-sm md:px-8 md:py-10">
 
       <div class="relative">
 
-        <!-- Dashed Line -->
-        <div class="absolute left-0 right-0 top-10 border-t-2 border-dashed border-gray-300"></div>
+        <!-- Dashed Line (Desktop Only) -->
+        <div class="absolute left-0 right-0 top-10 hidden border-t-2 border-dashed border-gray-300 lg:block"></div>
 
-        <div class="relative z-10 grid grid-cols-4 gap-6">
+        <!-- Timeline Items -->
+        <div class="relative z-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
 
           {timeline.map((item) => (
             <div class="flex flex-col items-center text-center">
 
+              <!-- Icon -->
               <div
-                class="flex h-20 w-20 items-center justify-center rounded-full border-[3px] bg-white"
+                class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] bg-white sm:h-20 sm:w-20"
                 style={`border-color:${item.color}; color:${item.color};`}
               >
                 {
                   item.Icon ? (
-                    <item.Icon size={36} />
+                    <item.Icon size={32} class="sm:h-9 sm:w-9" />
                   ) : (
                     <Image
                       src={item.image}
                       alt={item.title}
-                      class="h-9 w-9 object-contain"
+                      class="h-8 w-8 object-contain sm:h-9 sm:w-9"
                     />
                   )
                 }
               </div>
 
+              <!-- Date -->
               <h3
-                class="mt-5 text-xl font-extrabold uppercase"
+                class="mt-4 text-lg font-extrabold uppercase sm:text-xl"
                 style={`color:${item.color};`}
               >
                 {item.date}
               </h3>
 
-              <p class="mt-2 text-lg text-gray-700">
+              <!-- Title -->
+              <p class="mt-2 text-base text-gray-700 sm:text-lg">
                 {item.title}
               </p>
 
