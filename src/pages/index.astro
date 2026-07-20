@@ -48,6 +48,7 @@ const rules = [
   <Navbar />
   <main class="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8 py-6 md:py-8">
     <Hero />
+    <Features />
 
     <section id="about" class="py-12 pt-18 scroll-mt-18">
 
@@ -59,7 +60,7 @@ const rules = [
           About
       </p>
 
-<h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold">
+<h2 class="text-lg sm:text-2xl lg:text-3xl font-extrabold">
           OPEN SOURCE • REAL HARDWARE • REAL IMPACT
       </h2>
     </div>
@@ -67,7 +68,7 @@ const rules = [
     <!-- Content Card -->
     <div class="rounded-3xl bg-gradient-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200 shadow-sm">
 
-      <p class="text-lg md:text-xl leading-9 text-gray-700">
+      <p class="text-lg md:text-lg leading-9 text-gray-700">
         <span class="font-semibold text-[#0B2F83]">
           The FOSSEE OSHW Make-A-Thon 2026
         </span>
@@ -76,7 +77,7 @@ const rules = [
         warnings for natural disasters, while helping communities respond
         faster.
       </p>
-      <p class="text-lg md:text-xl leading-9 text-gray-700">
+      <p class="text-lg md:text-lg leading-9 text-gray-700">
         It is a One and a Half month innovation Journey - from problem understanding to working hardware prototypes.
       </p>
 
@@ -86,115 +87,111 @@ const rules = [
 
 </section>
     <!-- <About/> -->
-    <Features />
     <Theme /> 
     <Timeline/>
-      <section class="py-12 scroll-mt-15">
+<section class="scroll-mt-20 py-8 sm:py-12 md:py-16 bg-slate-50/50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-  <div class="max-w-7xl mx-auto px-4">
+    <!-- 3 COLUMNS GRID -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- WHO CAN PARTICIPATE -->
-      <div id="participate">
-        <h2 class="mb-5 text-3xl text-center font-bold uppercase text-blue-700">
+      <!-- COLUMN 1: WHO CAN PARTICIPATE -->
+      <div id="participate" class="flex flex-col">
+        <!-- Title Above Card -->
+        <h2 class="mb-4 sm:mb-6 text-center text-xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
           Who Can Participate?
         </h2>
 
-        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm h-full">
-          <ul class="space-y-3 text-base">
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Undergraduate & Postgraduate students
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md">
+          <ul class="space-y-3.5 text-sm sm:text-base text-slate-700">
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Undergraduate & Postgraduate students</span>
             </li>
 
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Polytechnic & Technical institute students
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Polytechnic & Technical institute students</span>
             </li>
 
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Makers, innovation clubs & interdisciplinary teams
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Makers, innovation clubs & interdisciplinary teams</span>
             </li>
 
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Global participation welcome
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Global participation welcome</span>
             </li>
 
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Individual or Team registration
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Individual or Team registration</span>
             </li>
 
-            <li class="flex gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
-              Maximum 5 participants per team
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Maximum 5 participants per team</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- WHAT YOU WILL DO -->
-      <div id="what">
-        <h2 class="mb-5 text-3xl text-center font-bold uppercase text-blue-700">
+      <!-- COLUMN 2: WHAT YOU WILL DO -->
+      <div id="what" class="flex flex-col">
+        <!-- Title Above Card -->
+        <h2 class="mb-4 sm:mb-6 text-center text-xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
           What You Will Do
         </h2>
 
-        <div class="grid grid-cols-2 gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-full">
-
-          {steps.map((step) => (
-            <div class="rounded-lg bg-slate-50 p-4 text-center">
-              <img
-                src={step.icon.src}
-                alt={step.alt}
-                class="mx-auto h-12 w-12"
-              />
-
-              <p class="mt-3 text-sm font-semibold">
-                {step.title}
-              </p>
-            </div>
-          ))}
-
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md">
+          <div class="grid flex-1 grid-cols-2 gap-3 sm:gap-4 align-content-start">
+            {steps.map((step) => (
+              <div class="flex flex-col items-center justify-center rounded-xl bg-slate-50 p-3 sm:p-4 text-center border border-slate-100 transition-colors hover:bg-slate-100/70">
+                <img
+                  src={step.icon.src}
+                  alt={step.alt}
+                  class="h-9 w-9 sm:h-12 sm:w-12 object-contain"
+                />
+                <p class="mt-2.5 text-xs sm:text-sm font-semibold text-slate-800 leading-tight">
+                  {step.title}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <!-- WHY PARTICIPATE -->
-      <div id="why">
-        <h2 class="mb-5 text-3xl text-center font-bold uppercase text-blue-700">
+      <!-- COLUMN 3: WHY PARTICIPATE -->
+      <div id="why" class="flex flex-col md:col-span-2 lg:col-span-1">
+        <!-- Title Above Card -->
+        <h2 class="mb-4 sm:mb-6 text-center text-xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
           Why Participate?
         </h2>
 
-        <div class="grid grid-cols-2 gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-full">
-
-          {items.map((item) => (
-            <div class="text-center">
-
-              <div class="mx-auto grid h-16 w-16 place-items-center rounded-full border border-slate-200 bg-slate-50 text-2xl">
-                {item.icon}
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md">
+          <div class="grid flex-1 grid-cols-2 gap-3 sm:gap-4 align-content-start">
+            {items.map((item) => (
+              <div class="flex flex-col items-center justify-start text-center p-2">
+                <div class="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full border border-slate-200 bg-slate-50 text-lg sm:text-xl shrink-0 shadow-xs">
+                  {item.icon}
+                </div>
+                <p class="mt-2.5 text-xs sm:text-sm font-medium text-slate-800 leading-tight">
+                  {item.title}
+                </p>
               </div>
-
-              <p class="mt-3 text-sm font-medium">
-                {item.title}
-              </p>
-
-            </div>
-          ))}
-
+            ))}
+          </div>
         </div>
       </div>
 
     </div>
 
   </div>
-
-</section>
-<br />
-<br />
-
-    <!-- <Register class="bg-slate-50" />
+</section>    <!-- <Register class="bg-slate-50" />
      <section class="py-12  border-y border-slate-200 scroll-mt-18 scroll-pt-18">
       <div class="max-w-6xl mx-auto px-6"> -->
         <!-- <div class="grid gap-10 md:grid-cols-2"> -->
@@ -220,18 +217,18 @@ const rules = [
      <div class=" rounded-3xl bg-linear-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200">
 
     
-    <p class="mb-4 text-center">
+    <p class="mb-4 text-lg text-center">
       An informative video has been uploaded to guide participants through the Make-A-Thon process. The video covers:
     </p>
 
-    <ul class="list-disc list-inside max-w-3xl mx-auto space-y-2 ">
+    <ul class="list-disc list-inside max-w-3xl text-lg  mx-auto space-y-2 ">
       <li>Make-A-Thon timelines and key milestones</li>
       <li>Themes and expected outcomes</li>
       <li>Study materials and reference resources</li>
       <li>Mandatory submission guidelines and requirements</li>
     </ul>
 
-    <p class="mt-5 text-center font-medium">
+    <p class="mt-5  text-lg text-center font-medium">
       Participants are strongly encouraged to watch the video carefully to ensure compliance with all Make-A-Thon guidelines.
     </p>
 
@@ -264,7 +261,7 @@ Participant Support & Query Resolution </h2>
      <div class=" rounded-3xl bg-linear-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200">
 
     
-    <p class="mb-4 text-center max-w-4xl mx-auto">
+    <p class="mb-4 text-lg text-center max-w-4xl mx-auto">
       To support participants throughout the hackathon, the FOSSEE Open Source Hardware Team will provide continuous guidance and assistance through the following channels:
     </p>
 
@@ -273,20 +270,20 @@ Participant Support & Query Resolution </h2>
 
       <!-- Live Sessions -->
       <div class="bg-white/10 border border-white/20 rounded-xl p-5">
-        <h3 class="text-xl font-semibold mb-3">
+        <h3 class="text-lg font-semibold mb-3">
           🔹 Live Online Consultation Sessions
         </h3>
 
-        <p class="mb-2">
+        <p class="mb-2 text-lg">
           These live sessions are intended to address participant queries related to:
         </p>
 
-        <ul class="list-disc list-inside space-y-1 mb-4 ">
+        <ul class="list-disc list-inside text-lg space-y-1 mb-4 ">
           <li>Hackathon guidelines and rules</li>
           <li>Submission formats and deadlines</li>
         </ul>
 
-        <div class="space-y-1 ">
+        <div class="space-y-1 text-lg">
           <p><b>Days:</b> Every Wednesday and Friday</p>
           <p><b>Time:</b> 3:00 PM onwards</p>
           <p><b>Mode:</b> Online</p>
@@ -308,20 +305,20 @@ Participant Support & Query Resolution </h2>
 
       <!-- Email Guidance -->
       <div class="bg-white/10 border border-white/20 rounded-xl p-5">
-        <h3 class="text-xl font-semibold mb-3">
+        <h3 class="text-lg font-semibold mb-3">
           🔹 One-to-One Project Guidance (via Email)
         </h3>
 
-        <p class="mb-2">Participants seeking guidance on:</p>
+        <p class="mb-2 text-lg">Participants seeking guidance on:</p>
 
-        <ul class="list-disc list-inside space-y-1 mb-4 ">
+        <ul class="list-disc list-inside text-lg space-y-1 mb-4 ">
           <li>Project ideas and feasibility</li>
           <li>Theme selection</li>
           <li>Project architecture and implementation</li>
           <li>Project report structure</li>
         </ul>
 
-        <p class="mb-2">
+        <p class="mb-2 text-lg">
           Please contact the team via the official email ID:
         </p>
 
@@ -354,7 +351,7 @@ Participant Support & Query Resolution </h2>
 Rules and Regulations </h2>
 
     <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-   <ul class="space-y-3 text-sm md:text-md text-black">
+   <ul class="space-y-3 text-lg md:text-md text-black">
   {rules.map((rule) => (
     <li class="flex items-start gap-3">
       <span class="mt-2 h-2 w-2 rounded-full bg-sky-500 shrink-0"></span>

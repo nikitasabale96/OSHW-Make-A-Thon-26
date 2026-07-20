@@ -44,34 +44,36 @@ const themes = [
 ];
 ---
 
-<section id="themes" class="bg-white py-20">
-  <div class="mx-auto max-w-7xl px-6">
+<section id="themes" class="bg-white py-12 md:py-16 lg:py-20 scroll-mt-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-    <h2 class="mb-8 text-center text-3xl font-bold uppercase text-blue-700">
+    <!-- Section Title -->
+    <h2 class="mb-8 text-center text-2xl font-bold uppercase text-blue-700 sm:text-3xl">
       Theme
     </h2>
 
-    <div class="rounded-3xl border border-slate-100 bg-white p-8 shadow-md">
+    <!-- Card -->
+    <div class="rounded-3xl border border-slate-100 bg-white p-5 shadow-md sm:p-8">
 
-      <div class="grid items-center gap-10 lg:grid-cols-[320px_1fr]">
+      <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[320px_1fr]">
 
         <!-- Left Side -->
-        <div>
+        <div class="text-center lg:text-left">
 
-          <h2 class="text-2xl font-extrabold uppercase leading-tight text-[#0B2F83]">
+          <h2 class="text-2xl font-extrabold uppercase leading-tight text-[#0B2F83] sm:text-3xl">
             Disaster Detection
             <br />
             & Early Warnings
           </h2>
 
-          <p class="mt-6 leading-8 text-gray-600">
+          <p class="mt-6 text-base leading-7 text-gray-600 sm:text-xl sm:leading-8">
             Design and develop Open Source Hardware solutions that detect,
             monitor and provide early warnings for natural disasters, helping
             communities respond faster and build a safer, more resilient future.
           </p>
 
           <button
-            class="mt-8 rounded-xl bg-gradient-to-r from-blue-700 to-green-600 px-8 py-4 font-semibold text-white transition hover:scale-105"
+            class="mt-8 w-full rounded-xl bg-gradient-to-r from-blue-700 to-green-600 px-8 py-4 font-semibold text-white transition hover:scale-105 sm:w-auto"
           >
             Learn More →
           </button>
@@ -79,30 +81,34 @@ const themes = [
         </div>
 
         <!-- Right Side -->
-        <div class="grid grid-cols-5 justify-items-center gap-4">
+        <div class="grid grid-cols-2 gap-6 justify-items-center sm:grid-cols-3 lg:grid-cols-5">
 
           {themes.map((item) => (
 
-            <div class="w-[145px] text-center">
+            <div class="w-full max-w-[150px] text-center">
 
-<div class="relative w-[140px] mx-auto">
-  <Image
-    src={item.image}
-    alt={item.title}
-    class="w-full h-[270px] rounded-2xl object-cover"
-  />
+              <div class="relative mx-auto w-[120px] sm:w-[130px] lg:w-[140px]">
 
-  <div
-    class="absolute left-1/2 -bottom-7 -translate-x-1/2 w-16 h-16 rounded-full bg-[#5C2D91] flex items-center justify-center shadow-xl"
-  >
-    <Image
-      src={item.icon}
-      alt={item.title}
-      class="w-9 h-9 object-contain"
-    />
-  </div>
-</div>
-              <h3 class="mt-10 text-lg font-bold uppercase text-[#412080]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  class="h-[220px] w-full rounded-2xl object-cover sm:h-[245px] lg:h-[270px]"
+                />
+
+                <!-- Icon (Position unchanged) -->
+                <div
+                  class="absolute left-1/2 -bottom-7 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-[#5C2D91] shadow-xl"
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    class="h-9 w-9 object-contain"
+                  />
+                </div>
+
+              </div>
+
+              <h3 class="mt-10 text-sm font-bold uppercase text-[#412080] sm:text-base lg:text-lg">
                 {item.title}
               </h3>
 
