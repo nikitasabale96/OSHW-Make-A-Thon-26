@@ -1,0 +1,259 @@
+---
+
+const faqs = [
+  {
+    question: "What is the FOSSEE Open Hardware National Make-a-thon 2026?",
+    answer:
+      "The National Make-a-thon is an innovation challenge organized by the FOSSEE Project, IIT Bombay, encouraging students to design and develop Open Source Hardware solutions for Disaster Detection & Early Warning Systems that create real societal impact.",
+  },
+  {
+    question: "When will the Make-a-thon be conducted?",
+    answer:
+      "The Make-a-thon will commence on 15th August 2026 and conclude on 30th September 2026. All project submissions must be completed within this duration.",
+  },
+  {
+    question: "Can I submit my project after 30th September 2026?",
+    answer:
+      "No. The submission deadline is 11:59 PM (IST) on 30th September 2026. Late submissions will not be accepted.",
+  },
+  {
+    question: "Who can participate?",
+    answer:
+      "Students from schools, colleges, universities, and other academic institutions are eligible to participate. Participants may register individually or as a team.",
+  },
+  {
+    question: "Is there any registration fee?",
+    answer:
+      "No. Participation in the Make-a-thon is completely free of cost.",
+  },
+  {
+    question: "Is there any specific hardware that must be used?",
+    answer:
+      "No. Participants may use any suitable Open Hardware platform including Arduino, ESP32, Raspberry Pi, STM32, BeagleBone, FPGA, LoRa, NRF24, custom PCBs, or any compatible platform.",
+  },
+  {
+    question: "Who will bear the cost of hardware and components?",
+    answer:
+      "All expenses related to hardware, sensors, modules, PCBs, fabrication, tools, shipping, and components must be borne by the participants.",
+  },
+  {
+    question: "Can we use sensors and modules from different manufacturers?",
+    answer:
+      "Yes. Commercially available sensors, communication modules, development boards, and custom-designed hardware may be used.",
+  },
+  {
+    question: "Can we submit an existing project?",
+    answer:
+      "Yes, provided significant innovation, development, documentation, and improvements are demonstrated during the Make-a-thon.",
+  },
+  {
+    question: "What should be submitted?",
+    answer:
+      "Complete Project Report, Circuit Diagram/Schematic, Source Code, Hardware Design Files (if applicable), Bill of Materials (BOM), Project Images, Working Demonstration Video, and Documentation.",
+  },
+  {
+    question: "Is Open Source mandatory?",
+    answer:
+      "Yes. Every submission must include the complete schematic, working source code, documentation, and specify the open-source license used.",
+  },
+  {
+    question: "What license should be used?",
+    answer:
+      "Projects should be released under CC BY-SA 4.0 or another approved open-source license wherever applicable.",
+  },
+  {
+    question: "Who owns the Intellectual Property (IP)?",
+    answer:
+      "The Intellectual Property shall belong jointly to the student(s) and the FOSSEE Project. Accepted submissions will be published under an appropriate open-source license.",
+  },
+  {
+    question: "Can Artificial Intelligence or Machine Learning be used?",
+    answer:
+      "Yes. AI, TinyML, Computer Vision, and Edge AI are encouraged where they improve disaster prediction or early warning capabilities.",
+  },
+  {
+    question: "Can IoT be used?",
+    answer:
+      "Yes. Wi-Fi, LoRa, GSM, NB-IoT, BLE, MQTT, satellite communication, and cloud platforms are encouraged.",
+  },
+  {
+    question: "How will projects be evaluated?",
+    answer:
+      "Projects will be evaluated based on Innovation, Technical Design, Open Hardware Design, Working Prototype, Documentation, Social Impact, Sustainability, Reproducibility, and Presentation.",
+  },
+  {
+    question: "Will mentoring be provided?",
+    answer:
+      "Yes. Participants may receive technical guidance through webinars, learning resources, documentation, and mentoring sessions.",
+  },
+  {
+    question: "How are winners selected?",
+    answer:
+      "Shortlisted teams will present before the judging panel. The decision of the organizers and review committee will be final.",
+  },
+  {
+    question: "Will every participant receive a Participation Certificate?",
+    answer:
+      "No. Only participants who successfully submit all required deliverables before the deadline are eligible.",
+  },
+  {
+    question: "Can one participant be part of multiple teams?",
+    answer:
+      "No. A participant may belong to only one team. Violations will result in disqualification.",
+  },
+  {
+    question: "Who should communicate with the organizers?",
+    answer:
+      "Each team must nominate one Team Lead, who will be the official point of contact.",
+  },
+  {
+    question: "What happens if a participant is involved in malpractice?",
+    answer:
+      "Any plagiarism, fabrication, duplicate submission, or unfair practice will result in immediate disqualification.",
+  },
+  {
+    question: "Where can I find updates?",
+    answer:
+      "All announcements, guidelines, templates, learning resources, FAQs, and notifications will be published on the official Make-a-thon website.",
+  },
+];
+---
+
+<!-- <section id="faq" class="py-20 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-12">
+      <p class="text-blue-700 font-bold uppercase  text-3xl">
+        Frequently Asked Questions
+      </p> -->
+
+      <!-- <h2 class="mt-3 text-4xl font-bold text-[#0B2F83]">
+        FOSSEE Open Hardware National Make-a-thon 2026
+      </h2> -->
+
+      <!-- <p class="text-2xl font-extrabold text-[#0B2F83] leading-tight uppercase">
+        Theme: Disaster Detection & Early Warnings
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-white rounded-xl border border-slate-200 shadow-sm">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-5 list-none">
+            <span class="font-semibold text-lg text-gray-800">
+              {index + 1}. {faq.question}
+            </span>
+
+            <span class="text-2xl text-blue-700 transition-transform group-open:rotate-45">
+              +
+            </span>
+          </summary>
+
+          <div class="border-t border-slate-100 px-6 py-5 text-gray-600 leading-8">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div> -->
+
+   <section id="faq" class="py-20 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-10">
+      <p class="text-blue-700 font-bold uppercase  text-3xl">
+        Frequently Asked Questions
+      </p> 
+
+       <h2 class=" text-xl font-bold text-[#0B2F83]">
+        FOSSEE Open Hardware National Make-a-thon 2026
+      </h2> 
+
+      <p class="text-xl font-extrabold text-[#0B2F83] leading-tight uppercase">
+        Theme: Disaster Detection & Early Warnings
+      </p>
+    </div>
+
+
+  
+
+  <div id="faq-list">
+  {faqs.map((faq, index) => (
+    <details
+      class={`faq-item group bg-white rounded-xl border border-slate-200 shadow-sm ${
+        index >= 5 ? "hidden" : ""
+      }`}
+    >
+      <summary class="flex cursor-pointer items-center justify-between px-6 py-5 list-none">
+        <span class="font-semibold text-lg text-gray-800">
+          {index + 1}. {faq.question}
+        </span>
+
+        <span class="text-2xl text-blue-700 transition-transform group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="border-t border-slate-100 px-6 py-5 text-gray-600 leading-8">
+        {faq.answer}
+      </div>
+    </details>
+  ))}
+</div>
+
+<div class="mt-8 text-center">
+  <button
+    id="viewMoreBtn"
+    class="rounded-lg bg-blue-700 px-6 py-3 text-white font-semibold hover:bg-blue-800 transition"
+  >
+    View More
+  </button>
+</div>
+<script is:inline>
+  const items = document.querySelectorAll(".faq-item");
+  const btn = document.getElementById("viewMoreBtn");
+
+  const initialVisible = 5;
+  const increment = 5;
+
+  let visible = initialVisible;
+  let expanded = false;
+
+  btn?.addEventListener("click", () => {
+    if (!expanded) {
+      // Show 5 more FAQs
+      const next = visible + increment;
+
+      for (let i = visible; i < next && i < items.length; i++) {
+        items[i].classList.remove("hidden");
+      }
+
+      visible = next;
+
+      // If all FAQs are visible, change button to "View Less"
+      if (visible >= items.length) {
+        expanded = true;
+        btn.textContent = "View Less";
+      }
+    } else {
+      // Hide all except the first 5 FAQs
+      for (let i = initialVisible; i < items.length; i++) {
+        items[i].classList.add("hidden");
+
+        // Close any open FAQ
+        items[i].removeAttribute("open");
+      }
+
+      visible = initialVisible;
+      expanded = false;
+      btn.textContent = "View More";
+
+      // Scroll back to the FAQ section
+      document
+        .getElementById("faq")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+</script>
+</section>  

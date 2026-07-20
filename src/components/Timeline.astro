@@ -1,0 +1,93 @@
+---
+import { CalendarDays, ClipboardCheck, FileText} from "lucide-astro";
+import Trophy from '../assets/Images/icon3.png';
+
+
+const timeline = [
+  {
+    icon: CalendarDays,
+    color: "#1E7A35",
+    date: "15TH AUG 2026",
+    title: "Registrations Open",
+  },
+  {
+    icon: ClipboardCheck,
+    color: "#1E40AF",
+    date: "15TH SEPT 2026",
+    title: "Midway Review",
+  },
+  {
+    icon: FileText,
+    color: "#6B21A8",
+    date: "30TH SEPT 2026",
+    title: "Final Submission",
+  },
+  {
+    icon: Trophy,
+    color: "#F97316",
+    date: "25TH OCT 2026",
+    title: "Results & Awards",
+  },
+];
+---
+
+<section id="timeline" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="bg-white border border-gray-100 rounded-3xl shadow-sm px-8 py-10">
+
+      <div class="grid lg:grid-cols-[180px_1fr] gap-8 items-start">
+
+        <!-- Left Heading -->
+        <div>
+          <p class="text-blue-700 font-bold uppercase text-3xl">
+            Timeline
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative">
+
+          <!-- Dashed Line -->
+          <div class="absolute top-10 left-0 right-0 border-t-2 border-dashed border-gray-300"></div>
+
+          <div class="grid grid-cols-4 relative z-10">
+
+            {timeline.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div class="text-center">
+
+                  <div
+                    class="mx-auto w-20 h-20 rounded-full bg-white border-[3px] flex items-center justify-center"
+                    style={`border-color:${item.color}; color:${item.color};`}
+                  >
+                    <icon size={36} />
+                  </div>
+
+                  <h3
+                    class="mt-5 text-xl font-extrabold uppercase"
+                    style={`color:${item.color}`}
+                  >
+                    {item.date}
+                  </h3>
+
+                  <p class="mt-2 text-gray-700 text-lg">
+                    {item.title}
+                  </p>
+
+                </div>
+              );
+            })}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

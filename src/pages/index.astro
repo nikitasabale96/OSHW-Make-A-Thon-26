@@ -1,0 +1,375 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Theme from '../components/Theme.astro'
+import Timeline from '../components/Timeline.astro';
+import FAQ from '../components/Faq.astro';
+import prototypeIcon from "../assets/Images/prototype.png";
+import schematicIcon from "../assets/Images/schematic.png";
+import openSourceIcon from "../assets/Images/open-source.png";
+import demoIcon from "../assets/Images/demo.png";
+
+const steps = [
+  { title: "Prototype Real Hardware", icon: prototypeIcon, alt: "Prototype" },
+  {
+    title: "Open Source Code & Schematics",
+    icon: schematicIcon,
+    alt: "Schematics",
+  },
+  { title: "Document & Share", icon: openSourceIcon, alt: "Open source" },
+  { title: "Demo Your Solution", icon: demoIcon, alt: "Demo" },
+];
+const items = [
+  { title: "Build Real Prototypes", icon: "🛠️" },
+  { title: "100% Open Source", icon: "🔓" },
+  { title: "Expert Mentors", icon: "👨‍🏫" },
+  { title: "Global Recognition", icon: "🌍" },
+];
+
+const rules = [
+  "The decision of the review committee and organizers in declaring the results will be final. No queries in this regard will be entertained.",
+  "The same person can not participate in more than one team.",
+  "If a person is found participating in more than one team, both teams will be disqualified from the Hackathon.",
+  // "Use ONLY Synfig Studio for creating animations. Create the supporting graphics, audio, etc. using only open source software. You are not allowed to use any proprietary software in your animation in any aspect. If found, you or your team will be disqualified.",
+  "The accepted submissions shall be released and published under open source license in the public domain. The copyright should be transferred to the FOSSEE project.",
+  "The team lead will be only one point of contact with the organizers.",
+  "Any participant found to be indulging in any form of malpractice will be immediately disqualified."
+];
+
+---
+
+<Layout>
+        
+    
+  <Navbar />
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden py-4">
+    <Hero />
+
+    <section id="about" class="py-12 pt-18 scroll-mt-18">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section Title -->
+    <div class="text-center mb-10">
+      <p class="text-blue-700 font-bold uppercase  text-3xl">
+        About
+      </p>
+
+      <h2 class="text-2xl font-extrabold text-[#0B2F83] leading-tight uppercase">
+        OPEN SOURCE • REAL HARDWARE • REAL IMPACT
+      </h2>
+    </div>
+
+    <!-- Content Card -->
+    <div class="rounded-3xl bg-gradient-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200 shadow-sm">
+
+      <p class="text-lg md:text-xl leading-9 text-gray-700">
+        <span class="font-semibold text-[#0B2F83]">
+          The FOSSEE OSHW Hackathon 2026
+        </span>
+        invites students from across the world to design, build and document
+        open-source hardware solutions that detect, monitor and provide early
+        warnings for natural disasters, while helping communities respond
+        faster.
+      </p>
+      <p class="text-lg md:text-xl leading-9 text-gray-700">
+        It is a One and a Half month innovation Journey - from problem understanding to working hardware prototypes.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+    <!-- <About/> -->
+    <Features />
+    <Theme /> 
+    <Timeline/>
+      <section class="py-12 scroll-mt-15">
+
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="grid gap-8 lg:grid-cols-3">
+
+      <!-- WHO CAN PARTICIPATE -->
+      <div id="participate">
+        <h2 class="mb-5 text-3xl font-bold uppercase text-blue-700">
+          Who Can Participate?
+        </h2>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm h-full">
+          <ul class="space-y-3 text-base">
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Undergraduate & Postgraduate students
+            </li>
+
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Polytechnic & Technical institute students
+            </li>
+
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Makers, innovation clubs & interdisciplinary teams
+            </li>
+
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Global participation welcome
+            </li>
+
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Individual or Team registration
+            </li>
+
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+              Maximum 5 participants per team
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WHAT YOU WILL DO -->
+      <div id="what">
+        <h2 class="mb-5 text-3xl font-bold uppercase text-blue-700">
+          What You Will Do
+        </h2>
+
+        <div class="grid grid-cols-2 gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-full">
+
+          {steps.map((step) => (
+            <div class="rounded-lg bg-slate-50 p-4 text-center">
+              <img
+                src={step.icon.src}
+                alt={step.alt}
+                class="mx-auto h-12 w-12"
+              />
+
+              <p class="mt-3 text-sm font-semibold">
+                {step.title}
+              </p>
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      <!-- WHY PARTICIPATE -->
+      <div id="why">
+        <h2 class="mb-5 text-3xl font-bold uppercase text-blue-700">
+          Why Participate?
+        </h2>
+
+        <div class="grid grid-cols-2 gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm h-full">
+
+          {items.map((item) => (
+            <div class="text-center">
+
+              <div class="mx-auto grid h-16 w-16 place-items-center rounded-full border border-slate-200 bg-slate-50 text-2xl">
+                {item.icon}
+              </div>
+
+              <p class="mt-3 text-sm font-medium">
+                {item.title}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<br />
+<br />
+
+    <!-- <Register class="bg-slate-50" />
+     <section class="py-12  border-y border-slate-200 scroll-mt-18 scroll-pt-18">
+      <div class="max-w-6xl mx-auto px-6"> -->
+        <!-- <div class="grid gap-10 md:grid-cols-2"> -->
+          <!-- <div id="why">
+            <SectionTitle id="whyTitle" title="Why Participate?" />
+            <WhyParticipate />
+          </div> -->
+          
+        <!-- </div> -->
+      </div>
+    </section>
+    
+    <section id="updates" class="py-10 scroll-pt-18 scroll-mt-18">
+  <div class="max-w-6xl mx-auto px-4 py-10 space-y-8">
+
+  <!-- <h2 class="text-2xl font-semibold mb-4 text-center">
+       Informative Video & Important Updates
+    </h2> -->
+
+<h2 class="mb-5 text-center text-3xl font-bold uppercase text-blue-700">
+  Informative Video &amp; Important Updates
+</h2>
+     <div class=" rounded-3xl bg-linear-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200">
+
+    
+    <p class="mb-4 text-center">
+      An informative video has been uploaded to guide participants through the Make-A-Thon process. The video covers:
+    </p>
+
+    <ul class="list-disc list-inside max-w-3xl mx-auto space-y-2 ">
+      <li>Make-A-Thon timelines and key milestones</li>
+      <li>Themes and expected outcomes</li>
+      <li>Study materials and reference resources</li>
+      <li>Mandatory submission guidelines and requirements</li>
+    </ul>
+
+    <p class="mt-5 text-center font-medium">
+      Participants are strongly encouraged to watch the video carefully to ensure compliance with all Make-A-Thon guidelines.
+    </p>
+
+    <!-- Centered Video Button -->
+    <div class="flex justify-center mt-6">
+      <a
+        href="https://www.youtube.com/watch?v=YR7GGRDp_a8"
+        target="_blank"
+        class="inline-flex items-center justify-center px-10 py-3 text-white text-lg font-medium rounded-xl
+               bg-gradient-to-r from-sky-400 to-cyan-400
+               shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+      >
+        ▶ Watch Video
+      </a>
+    </div>
+
+  </div>
+
+</section>
+<section id="resources" class="py-10 scroll-pt-20 scroll-mt-18" >
+<div class="max-w-6xl mx-auto px-4 py-10 space-y-8">
+
+  <!-- <h2 class="text-2xl font-semibold mb-4 text-center">
+       Participant Support & Query Resolution
+    </h2> -->
+
+<h2 class="mb-5  text-center text-3xl font-bold uppercase text-blue-700">
+Participant Support & Query Resolution </h2>
+
+     <div class=" rounded-3xl bg-linear-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200">
+
+    
+    <p class="mb-4 text-center max-w-4xl mx-auto">
+      To support participants throughout the hackathon, the FOSSEE Open Source Hardware Team will provide continuous guidance and assistance through the following channels:
+    </p>
+
+    <!-- Two Section Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+      <!-- Live Sessions -->
+      <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+        <h3 class="text-xl font-semibold mb-3">
+          🔹 Live Online Consultation Sessions
+        </h3>
+
+        <p class="mb-2">
+          These live sessions are intended to address participant queries related to:
+        </p>
+
+        <ul class="list-disc list-inside space-y-1 mb-4 ">
+          <li>Hackathon guidelines and rules</li>
+          <li>Submission formats and deadlines</li>
+        </ul>
+
+        <div class="space-y-1 ">
+          <p><b>Days:</b> Every Wednesday and Friday</p>
+          <p><b>Time:</b> 3:00 PM onwards</p>
+          <p><b>Mode:</b> Online</p>
+          <p><b>Platform:</b> Google Meet</p>
+        </div>
+
+        <div class="flex justify-center mt-4">
+          <a
+            href="https://meet.google.com/evv-sjzb-nyu"
+            target="_blank"
+            class="inline-flex items-center justify-center px-8 py-2 text-white font-medium rounded-xl
+                   bg-gradient-to-r from-sky-400 to-cyan-400
+                   shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            🔗 Join Meeting
+          </a>
+        </div>
+      </div>
+
+      <!-- Email Guidance -->
+      <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+        <h3 class="text-xl font-semibold mb-3">
+          🔹 One-to-One Project Guidance (via Email)
+        </h3>
+
+        <p class="mb-2">Participants seeking guidance on:</p>
+
+        <ul class="list-disc list-inside space-y-1 mb-4 ">
+          <li>Project ideas and feasibility</li>
+          <li>Theme selection</li>
+          <li>Project architecture and implementation</li>
+          <li>Project report structure</li>
+        </ul>
+
+        <p class="mb-2">
+          Please contact the team via the official email ID:
+        </p>
+
+        <div class="flex justify-center">
+          <a
+            href="mailto:contact-oshw@fossee.in"
+            class="inline-flex items-center justify-center px-8 py-2 text-white font-medium rounded-xl
+                   bg-gradient-to-r from-sky-400 to-cyan-400
+                   shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            ✉️ contact-oshw@fossee.in
+          </a>
+        </div>
+
+        <p class="mt-4 text-sm  text-center">
+          This ensures confidentiality of your project ideas and prevents unintentional sharing with other participating teams.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="rules" class="py-12 ">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="mb-5  text-center text-3xl font-bold uppercase text-blue-700">
+Rules and Regulations </h2>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+   <ul class="space-y-3 text-sm md:text-md text-black">
+  {rules.map((rule) => (
+    <li class="flex items-start gap-3">
+      <span class="mt-2 h-2 w-2 rounded-full bg-sky-500 shrink-0"></span>
+      <span>{rule}</span>
+    </li>
+  ))}
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <FAQ/>
+
+  </main>
+</Layout>

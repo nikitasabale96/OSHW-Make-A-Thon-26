@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import IIT from '../assets/Images/logo_1.png';
+import FOSSEE from '../assets/Images/logo_2.png';
+import OSHW from '../assets/Images/logo_3.png';
+---
+
+<header class="w-full border-b border-gray-100 bg-white sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+    <div class="flex items-center space-x-4">
+      <Image src={IIT} alt="IIT Bombay" class="h-15 w-auto object-contain" />
+      <div class="h-8 w-[1px] bg-gray-200"></div>
+      <Image src={FOSSEE} alt="FOSSEE" class="h-15 w-auto object-contain" />
+      <div class="h-8 w-[1px] bg-gray-200"></div>
+      <Image src={OSHW} alt="Open Hardware" class="h-15 w-auto object-contain" />
+    </div>
+
+    <nav class="hidden md:flex space-x-8 text-xl font-medium text-gray-600">
+      <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1">Home</a>
+      <a href="/#about" class="hover:text-blue-600 transition">About</a>
+      <a href="/#themes" class="hover:text-blue-600 transition">Theme</a>
+      <a href="/#timeline" class="hover:text-blue-600 transition">Timeline</a>
+      <a href="/#resources" class="hover:text-blue-600 transition">Resources</a>
+      <a href="/#rules" class="hover:text-blue-600 transition">Rules</a>
+      <a href="/#faq" class="hover:text-blue-600 transition">FAQ</a>
+      <a href="#" class="hover:text-blue-600 transition">Contact</a>
+    </nav>
+  </div>
+</header>

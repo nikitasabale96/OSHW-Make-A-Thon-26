@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Point Tailwind explicitly to our source directory to compile all classes */
+@source "../**/*.astro";
+@source "../components/**/*.astro";
+@source "../pages/**/*.astro";
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* --- Color Theme Specification --- */
+@theme {
+  /* Brand-specific Colors */
+  --color-brand-orange: #f26522; /* FOSSEE Orange */
+  --color-brand-blue: #0c4384;   /* Make-a-thon Dark Blue */
+  --color-brand-green: #047235;  /* Open-Source Emerald Green */
+
+  /* Semantic Layout Tokens (Light Mode Default) */
+  --color-page-bg: #ffffff;
+  --color-text-main: #111827;
+  --color-text-sub: #4b5563;
+  --color-card-bg: #f9fafb;
+  --color-border-subtle: #e5e7eb;
+}
+
+/* Dark Mode Overrides (Stormy Sky Palette) */
+.dark {
+  --color-page-bg: #08090a;       /* Deep dark stormy blue */
+  --color-text-main: #f3f4f6;     /* Bright text */
+  --color-text-sub: #9ca3af;      /* Secondary text */
+  --color-card-bg: #0f1e33;       /* Cards container blue */
+  --color-border-subtle: #1e2e45; /* Dark accent borders */
+
+  /* Bright/Neon brand accents for dark backgrounds */
+  --color-brand-orange: #ff7d3b;
+  --color-brand-blue: #38bdf8;
+  --color-brand-green: #10b981;
+}

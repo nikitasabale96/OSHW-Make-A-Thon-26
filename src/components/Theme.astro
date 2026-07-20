@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+
+// Import Disaster Illustrations
+import flood from '../assets/Images/flood.png';
+import landslide from '../assets/Images/landslide.png';
+import cyclone from '../assets/Images/cyclone.png';
+import earthquake from '../assets/Images/earthquake.png';
+import fire from '../assets/Images/fire.png';
+
+// Import Disaster Outline Icons
+import floodIcon from '../assets/Images/icon4a.png';
+import landslideIcon from '../assets/Images/icon5a.png';
+import cycloneIcon from '../assets/Images/icon6a.png';
+import earthquakeIcon from '../assets/Images/icon7a.png';
+import fireIcon from '../assets/Images/icon8a.png';
+
+
+const themes = [
+  {
+    title: "FLOODS",
+    image: flood,
+    icon: floodIcon,
+  },
+  {
+    title: "LANDSLIDES",
+    image: landslide,
+    icon: landslideIcon,
+  },
+  {
+    title: "EARTHQUAKES",
+    image: earthquake,
+    icon: earthquakeIcon,
+  },
+  {
+    title: "CYCLONES",
+    image: cyclone,
+    icon: cycloneIcon,
+  },
+  {
+    title: "FIRE",
+    image: fire,
+    icon: fireIcon,
+  },
+];
+---
+
+<section id="themes" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="bg-white rounded-3xl shadow-md border border-slate-100 p-8">
+
+            <div class="grid lg:grid-cols-[320px_1fr] gap-10 items-center">
+
+                <!-- Left Side -->
+
+                <div>
+
+                    <p class="text-blue-700 text-3xl font-bold uppercase mb-2">
+                        Theme
+                    </p>
+
+                    <h2 class="text-2xl font-extrabold text-[#0B2F83] leading-tight uppercase">
+                        Disaster Detection
+                        <br />
+                        & Early Warnings
+                    </h2>
+
+                    <p class="mt-6 text-gray-600 leading-8">
+                        Design and develop Open Source Hardware solutions that
+                        detect, monitor and provide early warnings for natural
+                        disasters, helping communities respond faster and build
+                        a safer, more resilient future.
+                    </p>
+
+                    <button
+                        class="mt-8 bg-gradient-to-r from-blue-700 to-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition">
+                        Learn More →
+                    </button>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="grid grid-cols-5 gap-5">
+
+                    {
+                        themes.map((item) => (
+
+                            <div class="text-center">
+
+                                <div class="relative">
+
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        class="rounded-2xl h-[330px] object-cover w-full"
+                                    />
+
+                                    <div
+                                        class="absolute left-1/2 -bottom-7 -translate-x-1/2 w-16 h-16 rounded-full bg-[#5C2D91] flex items-center justify-center shadow-xl">
+
+                                        <Image
+                                            src={item.icon}
+                                            alt={item.title}
+                                            class="w-9 h-9 object-contain"
+                                        />
+
+                                    </div>
+
+                                </div>
+
+                                <h3
+                                    class="mt-10 text-[#412080] font-bold text-lg uppercase">
+
+                                    {item.title}
+
+                                </h3>
+
+                            </div>
+
+                        ))
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import icon1 from '../assets/Images/icon1.png';
+import icon2 from '../assets/Images/icon2.png';
+import icon3 from '../assets/Images/icon3.png';
+
+const cards = [
+  {
+    icon: icon1,
+    alt: "Students",
+    title: "Students from",
+    subtitle: "all academic institutions",
+  },
+  {
+    icon: icon2,
+    alt: "Open Hardware",
+    title: "Build",
+    subtitle: "Open Hardware solutions",
+  },
+  {
+    icon: icon3,
+    alt: "Prizes",
+    title: "Exciting Prizes,",
+    subtitle: "Certificates & Recognition",
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto px-6 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {cards.map((card) => (
+      <div
+        class="flex items-center gap-5 bg-[#F3F7FB] px-8 py-6 transition-shadow hover:shadow-md"
+      >
+        <Image
+          src={card.icon}
+          alt={card.alt}
+          class="w-18 h-18 flex-shrink-0 object-contain"
+        />
+
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 leading-tight">
+            {card.title}
+          </h3>
+          <p class="text-2xl font-bold text-gray-900 leading-tight">
+            {card.subtitle}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+
+
+
