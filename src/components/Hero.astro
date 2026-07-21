@@ -2,14 +2,15 @@
 import { Image } from 'astro:assets';
 import rhImg from '../assets/Images/hero.png';
 import title from '../assets/Images/lhImg.png';
+import Features from './Features.astro';
 ---
 
-<section class="relative w-full pt-6 pb-12 overflow-hidden">
+<section class="relative w-full pt-4 overflow-hidden">
   
   <div class="w-full max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Title Section -->
-    <div class="w-full lg:w-1/4 flex flex-col space-y-6 z-10">
+    <div class=" lg:w-1/2  space-y-6">
       
       <!-- Top Small Brand Text -->
       <div class="space-y-1">
@@ -18,7 +19,7 @@ import title from '../assets/Images/lhImg.png';
       </div>
 
       <!-- Title Banner (lhImg.png) -->
-      <div class="w-full max-w-lg mx-auto lg:mx-0">
+      <div class="w-full max-w-xl mx-auto lg:mx-0">
         <Image 
           src={title} 
           alt="National Make-A-Thon Banner Title" 
@@ -73,5 +74,7 @@ import title from '../assets/Images/lhImg.png';
     </div>
 
   </div>
-  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+    <Features />
+  </div>
 </section>
