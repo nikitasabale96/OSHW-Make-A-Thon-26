@@ -35,3 +35,7 @@
   --color-brand-blue: #38bdf8;
   --color-brand-green: #10b981;
 }
+.html{
+  
+  scroll-behavior: smooth;
+}
