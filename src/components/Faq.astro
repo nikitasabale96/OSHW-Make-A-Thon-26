@@ -177,82 +177,38 @@ const faqs = [
 
   
 
-  <!-- <div id="faq-list">
-  {faqs.map((faq, index) => (
-    <details
-      class={`faq-item group bg-white rounded-xl border border-slate-200 shadow-sm ${
-        index >= 5 ? "hidden" : ""
-      }`}
-    >
-      <summary class="flex cursor-pointer items-center justify-between px-6 py-5 list-none">
-        <span class="font-semibold text-lg text-gray-800">
-          {index + 1}. {faq.question}
-        </span>
-
-        <span class="text-2xl text-blue-700 transition-transform group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="border-t border-slate-100 px-6 py-5 text-gray-600 leading-8">
-        {faq.answer}
-      </div>
-    </details>
-  ))}
-</div>
-
-<div class="mt-8 text-center">
-  <button
-    id="viewMoreBtn"
-    class="rounded-lg bg-blue-700 px-6 py-3 text-white font-semibold hover:bg-blue-800 transition"
-  >
-    View More
-  </button>
- </div> -->
- <script is:inline>
+<script is:inline>
   const items = document.querySelectorAll(".faq-item");
   const btn = document.getElementById("viewMoreBtn");
 
   const initialVisible = 5;
-  const increment = 5;
-
-  let visible = initialVisible;
   let expanded = false;
 
   btn?.addEventListener("click", () => {
     if (!expanded) {
-      // Show 5 more FAQs
-      const next = visible + increment;
+      // Show all remaining FAQs
+      items.forEach((item) => {
+        item.classList.remove("hidden");
+      });
 
-      for (let i = visible; i < next && i < items.length; i++) {
-        items[i].classList.remove("hidden");
-      }
-
-      visible = next;
-
-      // If all FAQs are visible, change button to "View Less"
-      if (visible >= items.length) {
-        expanded = true;
-        btn.textContent = "View Less";
-      }
+      expanded = true;
+      btn.textContent = "View Less";
     } else {
       // Hide all except the first 5 FAQs
-      for (let i = initialVisible; i < items.length; i++) {
-        items[i].classList.add("hidden");
+      items.forEach((item, index) => {
+        if (index >= initialVisible) {
+          item.classList.add("hidden");
+          item.removeAttribute("open"); // Close opened FAQ
+        }
+      });
 
-        // Close any open FAQ
-        items[i].removeAttribute("open");
-      }
-
-      visible = initialVisible;
       expanded = false;
       btn.textContent = "View More";
 
-      // Scroll back to the FAQ section
+      // Scroll back to FAQ section
       document
         .getElementById("faq")
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
-</script> 
-</section>  
+</script>

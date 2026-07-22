@@ -1,8 +1,10 @@
 ---
+
+import { Image } from "astro:assets";
+
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
 import Theme from '../components/Theme.astro'
 import Timeline from '../components/Timeline.astro';
 import FAQ from '../components/Faq.astro';
@@ -12,6 +14,12 @@ import openSourceIcon from "../assets/Images/open-source.png";
 import demoIcon from "../assets/Images/demo.png";
 import Contact from './contact.astro';
 import Footer from '../components/Footer.astro';
+
+import icona from '../assets/Images/icon-1b.png';
+import iconb from '../assets/Images/icon-1c.png';
+import iconc from '../assets/Images/icon-1d.png'; 
+import icond from '../assets/Images/icon-2a.png';
+
 
 const steps = [
   { title: "Prototype Real Hardware", icon: prototypeIcon, alt: "Prototype" },
@@ -24,10 +32,26 @@ const steps = [
   { title: "Demo Your Solution", icon: demoIcon, alt: "Demo" },
 ];
 const items = [
-  { title: "Build Real Prototypes", icon: "🛠️" },
-  { title: "100% Open Source", icon: "🔓" },
-  { title: "Expert Mentors", icon: "👨‍🏫" },
-  { title: "Global Recognition", icon: "🌍" },
+  {
+    title: "Build Real Prototypes",
+    icon: iconc,
+    alt: "Build Real Prototypes",
+  },
+  {
+    title: "100% Open Source",
+    icon: iconb,
+    alt: "100% Open Source",
+  },
+  {
+    title: "Expert Mentors",
+    icon: icond,
+    alt: "Expert Mentors",
+  },
+  {
+    title: "Global Recognition",
+    icon: icona,
+    alt: "Global Recognition",
+  },
 ];
 
 const rules = [
@@ -37,7 +61,9 @@ const rules = [
   // "Use ONLY Synfig Studio for creating animations. Create the supporting graphics, audio, etc. using only open source software. You are not allowed to use any proprietary software in your animation in any aspect. If found, you or your team will be disqualified.",
   "The accepted submissions shall be released and published under open source license in the public domain. The copyright should be transferred to the FOSSEE project.",
   "The team lead will be only one point of contact with the organizers.",
-  "Any participant found to be indulging in any form of malpractice will be immediately disqualified."
+  "Any participant found to be indulging in any form of malpractice will be immediately disqualified.",
+  "Certification Policy - A Completion Certificate will be awarded only to students who complete all required submissions as per the official guidelines.",
+  "No Participation or Registration Certificate will be issued."
 ];
 
 ---
@@ -57,7 +83,7 @@ const rules = [
 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <!-- Section Title -->
     <div class="text-center mb-4">
-<h2 class="text-2xl  font-bold uppercase text-blue-700">
+        <h2 class="mb-2 text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
           About
       </h2>
 
@@ -172,26 +198,27 @@ const rules = [
           Why Participate?
         </h2>
 
-        <!-- Card Container -->
-        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md">
-          <div class="grid flex-1 grid-cols-2 gap-3 sm:gap-4 align-content-start">
-            {items.map((item) => (
-              <div class="flex flex-col items-center justify-start text-center p-2">
-                <div class="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full border border-slate-200 bg-slate-50 text-lg sm:text-xl shrink-0 shadow-xs">
-                  {item.icon}
-                </div>
-                <p class="mt-2.5 text-lg font-medium text-slate-800 leading-tight">
-                  {item.title}
-                </p>
-              </div>
-            ))}
-          </div>
+
+<!-- Card Container -->
+<div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm transition-shadow hover:shadow-md">
+  <div class="grid flex-1 grid-cols-2 gap-4 sm:gap-6">
+    {items.map((item) => (
+      <div class="flex flex-col items-center text-center">
+        <div class="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full border border-slate-200 bg-slate-50 shadow-xs">
+          <Image
+            src={item.icon}
+            alt={item.alt}
+            class="h-8 w-8 sm:h-10 sm:w-10 object-contain"
+          />
         </div>
+
+        <p class="mt-3 text-base sm:text-lg font-medium text-slate-800 leading-tight">
+          {item.title}
+        </p>
       </div>
-
-    </div>
-
+    ))}
   </div>
+</div>  </div>
 </section>    <!-- <Register class="bg-slate-50" />
      <section class="py-12  border-y border-slate-200 scroll-mt-18 scroll-pt-18">
       <div class="max-w-6xl mx-auto px-6"> -->
