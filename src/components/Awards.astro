@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import first from "../assets/Images/badge01.png";
+import second from "../assets/Images/badge02.png";
+import third from "../assets/Images/badge03.png";
+import gift from "../assets/Images/giftbox.png";
+
+const prizes = [
+  {
+    image: first,
+    color: "#F59E0B",
+    place: "First Place",
+    amount: "₹ 8,000",
+    extra: "+ Certificate + Goodies",
+  },
+  {
+    image: second,
+    color: "#6B7280",
+    place: "Second Place",
+    amount: "₹ 5,000",
+    extra: "+ Certificate + Goodies",
+  },
+  {
+    image: third,
+    color: "#D97706",
+    place: "Third Place",
+    amount: "₹ 3,500",
+    extra: "+ Certificate + Goodies",
+  },
+  {
+    image: gift,
+    color: "#DB2777",
+    place: "Top Projects",
+    amount: "",
+    extra: "Get featured on FOSSEE platforms and more!",
+  },
+];
+---
+<section id="prizes" class="scroll-mt-20 bg-white py-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <h2 class="mb-6 text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase text-blue-700">
+      Prizes
+    </h2>
+
+    <div class="mx-auto max-w-6xl rounded-3xl border border-gray-100 bg-white px-6 py-8 shadow-sm">
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+        {prizes.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm hover:shadow-md transition">
+
+            <Image
+              src={item.image}
+              alt={item.place}
+              class="mx-auto h-16 w-16 object-contain"
+            />
+
+            <h3
+              class="mt-4 text-xl font-bold uppercase"
+              style={`color:${item.color};`}
+            >
+              {item.place}
+            </h3>
+
+            {item.amount && (
+              <p class="mt-2 text-3xl font-extrabold text-slate-900">
+                {item.amount}
+              </p>
+            )}
+
+            <p class="mt-2 text-base text-gray-700">
+              {item.extra}
+            </p>
+
+          </div>
+        ))}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
