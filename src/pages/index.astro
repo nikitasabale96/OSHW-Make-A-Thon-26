@@ -1,0 +1,474 @@
+---
+
+import { Image } from "astro:assets";
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Theme from '../components/Theme.astro'
+import Timeline from '../components/Timeline.astro';
+import FAQ from '../components/Faq.astro';
+import prototypeIcon from "../assets/Images/prototype.png";
+import schematicIcon from "../assets/Images/schematic.png";
+import openSourceIcon from "../assets/Images/open-source.png";
+import demoIcon from "../assets/Images/demo.png";
+import Contact from './contact.astro';
+import Footer from '../components/Footer.astro';
+import Awards from '../components/Awards.astro';
+
+import icona from '../assets/Images/icon-1b.png';
+import iconb from '../assets/Images/icon-1c.png';
+import iconc from '../assets/Images/icon-1d.png'; 
+import icond from '../assets/Images/icon-2a.png';
+import qrcode from '../assets/Images/qrcode.png';
+
+
+const steps = [
+  { title: "Prototype Real Hardware", icon: prototypeIcon, alt: "Prototype" },
+  {
+    title: "Open Source Code & Schematics",
+    icon: schematicIcon,
+    alt: "Schematics",
+  },
+  { title: "Document & Share", icon: openSourceIcon, alt: "Open source" },
+  { title: "Demo Your Solution", icon: demoIcon, alt: "Demo" },
+];
+const items = [
+  {
+    title: "Build Real Prototypes",
+    icon: iconc,
+    alt: "Build Real Prototypes",
+  },
+  {
+    title: "100% Open Source",
+    icon: iconb,
+    alt: "100% Open Source",
+  },
+  {
+    title: "Expert Mentors",
+    icon: icond,
+    alt: "Expert Mentors",
+  },
+  {
+    title: "Global Recognition",
+    icon: icona,
+    alt: "Global Recognition",
+  },
+];
+
+const prizes = [
+  {
+    type: "title",
+    title: "PRIZES TO BE WON!",
+    bg: "bg-purple-800",
+    text: "text-white",
+  },
+  {
+    rank: "1",
+    place: "FIRST PLACE",
+    amount: "₹ 8,000",
+    extra: "+ Certificate + Goodies",
+    medal: "🥇",
+    border: "border-yellow-300",
+  },
+  {
+    rank: "2",
+    place: "SECOND PLACE",
+    amount: "₹ 5,000",
+    extra: "+ Certificate + Goodies",
+    medal: "🥈",
+    border: "border-slate-300",
+  },
+  {
+    rank: "3",
+    place: "THIRD PLACE",
+    amount: "₹ 3,500",
+    extra: "+ Certificate + Goodies",
+    medal: "🥉",
+    border: "border-orange-300",
+  },
+  {
+    type: "feature",
+    title: "TOP PROJECTS",
+    text: "Get featured on FOSSEE platforms and more!",
+    icon: "🎁",
+    border: "border-pink-300",
+  },
+];
+
+
+   
+
+const rules = [
+  "The decision of the review committee and organizers in declaring the results will be final. No queries in this regard will be entertained.",
+  "The same person can not participate in more than one team.",
+  "If a person is found participating in more than one team, both teams will be disqualified from the Make-A-Thon.",
+  // "Use ONLY Synfig Studio for creating animations. Create the supporting graphics, audio, etc. using only open source software. You are not allowed to use any proprietary software in your animation in any aspect. If found, you or your team will be disqualified.",
+  "The accepted submissions shall be released and published under open source license in the public domain. The copyright should be transferred to the FOSSEE project.",
+  "The team lead will be only one point of contact with the organizers.",
+  "Any participant found to be indulging in any form of malpractice will be immediately disqualified.",
+  "Certification Policy - A Completion Certificate will be awarded only to students who complete all required submissions as per the official guidelines.",
+  "No Participation or Registration Certificate will be issued."
+];
+
+---
+
+<Layout>
+        
+
+  <Navbar />
+          <Hero />
+
+    <main class="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6">
+
+
+    <section id="about" class="py-8 pb-4 pt-18 scroll-mt-18">
+
+  <!-- <div class="max-w-6xl mx-auto px-6"> -->
+<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <!-- Section Title -->
+    <div class="text-center mb-4">
+        <h2 class="mb-2 text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
+          About
+      </h2>
+
+<h3 class="mb-2 text-lg sm:text-2xl  font-bold">
+          OPEN SOURCE • REAL HARDWARE • REAL IMPACT
+      </h3>
+    </div>
+
+    <!-- Content Card -->
+    <div class="rounded-3xl from-slate-50 to-white p-8 ring-1 ring-slate-200 shadow-sm">
+
+      <p class="text-lg md:text-lg leading-9 text-black">
+        <span class="font-semibold text-[#0B2F83]">
+          The FOSSEE Open Hardware Make-A-Thon 2026
+        </span>
+        invites students from across the world to design, build and document
+        open-source hardware solutions that detect, monitor and provide early
+        warnings for natural disasters, while helping communities respond
+        faster.
+      </p>
+      <p class="text-lg md:text-lg leading-9 text-black ">
+        It is a One and a Half month innovation Journey - from problem understanding to working hardware prototypes.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+    <!-- <About/> -->
+    <Theme /> 
+    <Timeline/>
+<section id="register" class="scroll-mt-18 pb-4 sm:py-12 md:py-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- ================= FIRST ROW ================= -->
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+
+      <!-- Who Can Participate -->
+      <div class="flex flex-col">
+        <h2 class="mb-2 text-center text-2xl font-bold uppercase text-blue-700 lg:text-3xl">
+          Who Can Participate?
+        </h2>
+
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 lg:p-8">
+          <ul class="space-y-3 text-lg text-black md:text-md">
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Undergraduate & Postgraduate students</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Polytechnic & Technical institute students</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Makers, innovation clubs & interdisciplinary teams</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Global participation welcome</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Individual or Team registration</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-500"></span>
+              <span>Maximum 5 participants per team</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Register Section -->
+      <div class="flex flex-col">
+        <h2 class="mb-2 text-center text-2xl font-bold uppercase text-blue-700 sm:text-2xl lg:text-3xl">
+          Register
+        </h2>
+
+        <div class="flex flex-1 flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 lg:p-8">
+          <h3 class="text-center text-xl font-bold text-blue-700 lg:text-2xl">
+            BUILD FOR SOCIETY. BUILD IT OPEN.
+          </h3>
+
+          <p class="mt-3 text-center text-base lg:text-lg">
+            Think Global. Build Open. Innovate for Sustainability.
+          </p>
+
+          <a
+            href="https://forms.gle/79dujAJL664Tu8Z5A"
+            target="_blank"
+            class="mt-5 text-xl font-bold text-blue-700 hover:text-blue-800"
+          >
+            Register Now
+          </a>
+
+          <Image
+            src={qrcode}
+            alt="QR Code"
+            class="mt-5 h-auto w-32 sm:w-36 lg:w-40"
+          />
+        </div>
+      </div>
+
+    </div><!-- /FIRST ROW -->
+
+
+    <!-- ================= SECOND ROW ================= -->
+    <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+
+      <!-- What You Will Do -->
+      <div class="flex flex-col">
+        <h2 class="mb-2 text-center text-2xl font-bold uppercase text-blue-700 lg:text-3xl">
+          What You Will Do
+        </h2>
+
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 lg:p-8">
+          <div class="grid flex-1 grid-cols-2 gap-3 content-start sm:gap-4">
+            {steps.map((step) => (
+              <div class="flex flex-col items-center justify-center rounded-xl border border-slate-100 bg-slate-50 p-3 text-center transition-colors hover:bg-slate-100/70 sm:p-4">
+                <img
+                  src={step.icon.src}
+                  alt={step.alt}
+                  class="h-9 w-9 object-contain sm:h-12 sm:w-12"
+                />
+                <p class="mt-2.5 text-lg font-semibold leading-tight text-slate-800">
+                  {step.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Participate -->
+      <div class="flex flex-col">
+        <h2 class="mb-2 text-center text-2xl font-bold uppercase text-blue-700 lg:text-3xl">
+          Why Participate?
+        </h2>
+
+        <!-- Card Container -->
+        <div class="flex flex-1 flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6 lg:p-8">
+          <div class="grid flex-1 grid-cols-2 gap-4 content-start sm:gap-6">
+            {items.map((item) => (
+              <div class="flex flex-col items-center text-center">
+                <div class="flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-slate-50 shadow-xs sm:h-16 sm:w-16">
+                  <Image
+                    src={item.icon}
+                    alt={item.alt}
+                    class="h-8 w-8 object-contain sm:h-10 sm:w-10"
+                  />
+                </div>
+
+                <p class="mt-3 text-base font-medium leading-tight text-slate-800 sm:text-lg">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /SECOND ROW -->
+
+  </div>
+</section>
+
+<Awards/>
+    <!-- <section id="updates" class=" scroll-pt-18 scroll-mt-18">
+  <div class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+
+   <h2 class="text-2xl font-semibold mb-4 text-center">
+       Informative Video & Important Updates
+    </h2> -->
+
+        <!-- <h2 class="mb-2  text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
+  Informative Video &amp; Important Updates
+</h2>
+     <div class=" rounded-3xl from-slate-50 to-white p-8 ring-1 ring-slate-200 text-lg md:text-lg leading-9 text-black">
+
+    
+    <p class="mb-4 text-lg text-center">
+      An informative video has been uploaded to guide participants through the Make-A-Thon process. The video covers:
+    </p>
+
+    <ul class="list-disc list-inside max-w-3xl text-lg  mx-auto space-y-2 ">
+      <li>Make-A-Thon timelines and key milestones</li>
+      <li>Themes and expected outcomes</li>
+      <li>Study materials and reference resources</li>
+      <li>Mandatory submission guidelines and requirements</li>
+    </ul>
+
+    <p class="mt-5  text-lg text-center font-medium">
+      Participants are strongly encouraged to watch the video carefully to ensure compliance with all Make-A-Thon guidelines.
+    </p> -->
+
+    <!-- Centered Video Button -->
+    <!-- <div class="flex justify-center mt-6"> -->
+      <!-- <a
+        href="https://www.youtube.com/watch?v=YR7GGRDp_a8"
+        target="_blank"
+        class="inline-flex items-center justify-center px-10 py-3 text-white text-lg font-medium rounded-xl
+              bg-gradient-to-r from-[#0c4384] to-[#047235]
+               shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+      >
+        ▶ Watch Video
+      </a>
+    </div>
+
+  </div>
+
+</section> --> 
+<section id="resources" class=" scroll-pt-20 scroll-mt-18" >
+<div class="max-w-6xl mx-auto px-4 py-10 space-y-8">
+
+  <!-- <h2 class="text-2xl font-semibold mb-4 text-center">
+       Participant Support & Query Resolution
+    </h2> -->
+
+        <h2 class="mb-2  text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
+Participant Support & Query Resolution </h2>
+
+     <div class=" rounded-3xl to-white p-8 ring-1 ring-slate-200 text-lg md:text-lg leading-9 text-black">
+
+    
+    <p class="mb-4 text-lg text-center max-w-4xl mx-auto">
+      To support participants throughout the Make-A-Thon, the FOSSEE Open Source Hardware Team will provide continuous guidance and assistance through the following channels:
+    </p>
+
+    <!-- Two Section Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+      <!-- Live Sessions -->
+      <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+        <h3 class="text-lg font-semibold mb-3">
+          🔹 Live Online Consultation Sessions
+        </h3>
+
+        <p class="mb-2 text-lg">
+          These live sessions are intended to address participant queries related to:
+        </p>
+
+        <ul class="list-disc list-inside text-lg space-y-1 mb-4 ">
+          <li>Make-A-Thon guidelines and rules</li>
+          <li>Submission formats and deadlines</li>
+        </ul>
+
+        <div class="space-y-1 text-lg">
+          <p><b>Days:</b> Every Wednesday and Friday</p>
+          <p><b>Time:</b> 3:00 PM onwards</p>
+          <p><b>Mode:</b> Online</p>
+          <p><b>Platform:</b> Google Meet</p>
+        </div>
+
+        <div class="flex justify-center mt-4">
+          <a
+            href="https://meet.google.com/evv-sjzb-nyu"
+            target="_blank"
+            class="inline-flex items-center justify-center px-8 py-2 text-white font-medium rounded-xl
+                   bg-gradient-to-r from-[#0c4384] to-[#047235]
+                   shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            🔗 Join Meeting
+          </a>
+        </div>
+      </div>
+
+      <!-- Email Guidance -->
+      <div class="bg-white/10 border border-white/20 rounded-xl p-5">
+        <h3 class="text-lg font-semibold mb-3">
+          🔹 One-to-One Project Guidance (via Email)
+        </h3>
+
+        <p class="mb-2 text-lg">Participants seeking guidance on:</p>
+
+        <ul class="list-disc list-inside text-lg space-y-1 mb-4 ">
+          <li>Project ideas and feasibility</li>
+          <li>Theme selection</li>
+          <li>Project architecture and implementation</li>
+          <li>Project report structure</li>
+        </ul>
+
+        <p class="mb-2 text-lg">
+          Please contact the team via the official email ID:
+        </p>
+
+        <div class="flex justify-center">
+          <a
+            href="mailto:contact-oshw@fossee.in"
+            class="inline-flex items-center justify-center px-8 py-2 text-white font-medium rounded-xl
+                   bg-gradient-to-r from-[#0c4384] to-[#047235]
+                   shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            ✉️ contact-oshw@fossee.in
+          </a>
+        </div>
+
+        <p class="mt-4 text-sm  text-center">
+          This ensures confidentiality of your project ideas and prevents unintentional sharing with other participating teams.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="rules" class="py-8 pb-4 scroll-mt-18">
+  <div class="max-w-6xl mx-auto px-6">
+        <h2 class="mb-2  text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase  text-blue-700">
+Rules and Regulations </h2>
+
+    <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm text-lg md:text-lg leading-9 text-black">
+   <ul class="space-y-3 text-lg md:text-md text-black">
+  {rules.map((rule) => (
+    <li class="flex items-start gap-3">
+      <span class="mt-2 h-2 w-2 rounded-full bg-sky-500 shrink-0"></span>
+      <span>{rule}</span>
+    </li>
+  ))}
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <FAQ/>
+    <Contact/>
+
+  </main>
+        <Footer/>
+
+</Layout>

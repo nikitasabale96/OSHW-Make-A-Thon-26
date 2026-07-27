@@ -1,0 +1,102 @@
+---
+import { CalendarDays, ClipboardCheck, FileText } from "lucide-astro";
+import { Image } from "astro:assets";
+import Trophy from "../assets/Images/icon3.png";
+
+const timeline = [
+  {
+    Icon: CalendarDays,
+    image: null,
+    color: "#1E7A35",
+    date: "1ST AUG 2026",
+    title: "Registrations Open",
+  },
+  {
+    Icon: ClipboardCheck,
+    image: null,
+    color: "#1E40AF",
+    date: "15TH AUG 2026",
+    title: "Make-A-Thon Starts",
+  },
+  {
+    Icon: FileText,
+    image: null,
+    color: "#6B21A8",
+    date: "30TH SEPT 2026",
+    title: "Final Submission",
+  },
+  {
+    Icon: null,
+    image: Trophy,
+    color: "#F97316",
+    date: "16TH OCT 2026",
+    title: "Results & Awards",
+  },
+];
+---
+
+
+<section id="timeline" class="scroll-mt-20 bg-white  pb-4 md:py-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Title -->
+    <h2 class="mb-4 text-center text-2xl sm:text-2xl lg:text-3xl font-bold uppercase text-blue-700">
+      Timeline
+    </h2>
+
+    <!-- Timeline Card -->
+    <div class="mx-auto max-w-6xl rounded-3xl border border-gray-100 bg-white px-6 py-8 shadow-sm md:px-8 md:py-10">
+
+      <div class="relative">
+
+        <!-- Dashed Line (Desktop Only) -->
+        <div class="absolute left-0 right-0 top-10 hidden border-t-2 border-dashed border-gray-300 lg:block"></div>
+
+        <!-- Timeline Items -->
+        <div class="relative z-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+
+          {timeline.map((item) => (
+            <div class="flex flex-col items-center text-center">
+
+              <!-- Icon -->
+              <div
+                class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] bg-white sm:h-20 sm:w-20"
+                style={`border-color:${item.color}; color:${item.color};`}
+              >
+                {
+                  item.Icon ? (
+                    <item.Icon size={32} class="sm:h-9 sm:w-9" />
+                  ) : (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      class="h-8 w-8 object-contain sm:h-9 sm:w-9"
+                    />
+                  )
+                }
+              </div>
+
+              <!-- Date -->
+              <h3
+                class="mt-4 text-lg font-extrabold uppercase sm:text-xl"
+                style={`color:${item.color};`}
+              >
+                {item.date}
+              </h3>
+
+              <!-- Title -->
+              <p class="mt-2 text-base sm:text-lg text-black">
+                {item.title}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
