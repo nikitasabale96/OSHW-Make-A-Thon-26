@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+
+// Import Disaster Illustrations
+import flood from "../assets/Images/flood.png";
+import landslide from "../assets/Images/landslide.png";
+import earthquake from "../assets/Images/earthquake.png";
+import cyclone from "../assets/Images/cyclone.png";
+import fire from "../assets/Images/fire.png";
+
+// Import Disaster Outline Icons
+import floodIcon from "../assets/Images/icon4a.png";
+import landslideIcon from "../assets/Images/icon5a.png";
+import earthquakeIcon from "../assets/Images/icon7a.png";
+import cycloneIcon from "../assets/Images/icon6a.png";
+import fireIcon from "../assets/Images/icon8a.png";
+
+const themes = [
+  {
+    title: "FLOODS",
+    image: flood,
+    icon: floodIcon,
+  },
+  {
+    title: "LANDSLIDES",
+    image: landslide,
+    icon: landslideIcon,
+  },
+  {
+    title: "EARTHQUAKES",
+    image: earthquake,
+    icon: earthquakeIcon,
+  },
+  {
+    title: "CYCLONES",
+    image: cyclone,
+    icon: cycloneIcon,
+  },
+  {
+    title: "FIRE",
+    image: fire,
+    icon: fireIcon,
+  },
+];
+---
+
+<section id="themes" class="bg-white  pb-4 md:py-16 lg:py-4 scroll-mt-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Title -->
+    <h2 class="mb-4 text-center text-2xl font-bold uppercase text-blue-700 sm:text-3xl">
+      Theme
+    </h2>
+
+    <!-- Card -->
+    <div class="rounded-3xl border border-slate-100 bg-white p-5 shadow-md sm:p-8">
+
+      <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[320px_1fr]">
+
+        <!-- Left Side -->
+        <div class="text-center lg:text-left">
+
+          <h4 class="text-xl font-extrabold uppercase leading-tight text-[#0B2F83] sm:text-3xl">
+            Disaster Detection
+            <br />
+            & Early Warnings
+          </h4>
+
+          <p class="text-lg md:text-lg leading-9 text-black">
+            Design and develop Open Source Hardware solutions that detect,
+            monitor and provide early warnings for natural disasters, helping
+            communities respond faster and build a safer, more resilient future.
+          </p>
+
+          <!-- <button
+            class="mt-8 w-full rounded-xl bg-gradient-to-r from-[#0c4384] to-[#047235] px-8 py-4 font-semibold text-white transition hover:scale-105 sm:w-auto"
+          >
+            Learn More →
+          </button> -->
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="grid grid-cols-2 gap-6 justify-items-center sm:grid-cols-3 lg:grid-cols-5">
+
+          {themes.map((item) => (
+
+            <div class="w-full max-w-[150px] text-center">
+
+              <div class="relative mx-auto w-[120px] sm:w-[130px] lg:w-[140px]">
+
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  class="h-[220px] w-full rounded-2xl object-cover sm:h-[245px] lg:h-[270px]"
+                />
+
+                <!-- Icon (Position unchanged) -->
+                <div
+                  class="absolute left-1/2 -bottom-7 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-[#5C2D91] shadow-xl"
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    class="h-9 w-9 object-contain"
+                  />
+                </div>
+
+              </div>
+
+              <h3 class="mt-10 text-sm font-bold uppercase text-[#412080] sm:text-base lg:text-lg">
+                {item.title}
+              </h3>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
