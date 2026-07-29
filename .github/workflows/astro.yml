@@ -1,4 +1,4 @@
-name: Deploy to Scilab Hackathon 2026 site
+name: Deploy to OSHW makeathon 2026 site
 
 on:
   push:
