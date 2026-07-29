@@ -1,0 +1,40 @@
+name: Deploy to Scilab Hackathon 2026 site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: oshwmakeathon2026
+
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Debug Node Version
+        run: |
+          which node
+          node -v
+          npm -v
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+
+      - name: Create folder
+        run: |
+          mkdir -p /home/github/Assets/oshwmakeathon2026.fossee.in/prod
+          cp -R dist /home/github/Assets/oshwmakeathon2026.fossee.in/prod
